@@ -1,0 +1,25 @@
+<div class="cards-container">
+  {{#each cards}}
+    <form action="/" method="post">
+      <div class="card">
+        <article class="card__article">
+          <div class="card__image-container">
+            <img src="{{img}}" alt="" class="card__image" />
+          </div>
+          <input type="hidden" name="productId" value="{{productId}}" />
+          <button type="submit">
+            {{#if enCarrito}}
+              Ya está en el carrito
+            {{else}}
+              Añadir al carrito
+            {{/if}}
+          </button>
+          <div class="card__content">
+            <h2 class="card__heading">{{name}}</h2>
+            <p class="card__description">{{description}}</p>
+          </div>
+        </article>
+      </div>
+    </form>
+  {{/each}}
+</div>
